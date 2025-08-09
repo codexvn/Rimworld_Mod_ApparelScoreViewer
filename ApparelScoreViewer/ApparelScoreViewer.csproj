@@ -39,6 +39,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="I18Constant.cs" />
         <Compile Include="ModConstant.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="ShowScore.cs" />
@@ -67,6 +68,10 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="publish\About\About.xml" />
+      <Content Include="publish\Languages\ChineseSimplified\Keyed\I18.xml" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="publish\Languages\English\Keyed\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

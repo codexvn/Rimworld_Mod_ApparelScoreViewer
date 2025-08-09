@@ -167,18 +167,21 @@ namespace ApparelScoreViewer
                 ap.def.apparel.mechanitorApparel && pawn.mechanitor == null)
             {
                 resultScore = -10f;
-                logic.Add($"无法穿戴 {ap.LabelCap}，评分为 -10 结果为{resultScore}");
-                if (!ap.PawnCanWear(pawn, true)) logic.Add("- 殖民者无法穿戴此装备");
-                if (ap.def.apparel.blocksVision) logic.Add("- 装备遮挡视野");
-                if (ap.def.apparel.slaveApparel && !pawn.IsSlave) logic.Add("- 奴隶装备但穿戴者不是奴隶");
-                if (ap.def.apparel.mechanitorApparel && pawn.mechanitor == null) logic.Add("- 机械师装备但穿戴者不是机械师");
+                // logic.Add($"无法穿戴 {ap.LabelCap}，评分为 -10 结果为{resultScore}");
+                logic.Add(I18Constant.CannotWear.Translate(ap.LabelCap,resultScore));
+                if (!ap.PawnCanWear(pawn, true)) logic.Add(I18Constant.CannotWearReason1.Translate());
+                if (ap.def.apparel.blocksVision) logic.Add(I18Constant.CannotWearReason2.Translate());
+                if (ap.def.apparel.slaveApparel && !pawn.IsSlave) logic.Add(I18Constant.CannotWearReason3.Translate());
+                if (ap.def.apparel.mechanitorApparel && pawn.mechanitor == null) logic.Add(I18Constant.CannotWearReason4.Translate());
                 return new Tuple<float, List<string>>(resultScore, logic);
             }
 
             float num1 = 0.1f + ap.def.apparel.scoreOffset + (ap.GetStatValue(StatDefOf.ArmorRating_Sharp) +
                                                               ap.GetStatValue(StatDefOf.ArmorRating_Blunt));
-            logic.Add(
-                $"基础分数：0.1 + 装备分数偏移({ap.def.apparel.scoreOffset}) + 锐器护甲({ap.GetStatValue(StatDefOf.ArmorRating_Sharp)}) + 钝器护甲({ap.GetStatValue(StatDefOf.ArmorRating_Blunt)}) = {num1}");
+            
+            logic.Add(I18Constant.BasicScoreWithDetails.Translate(0.1,ap.def.apparel.scoreOffset,
+                ap.GetStatValue(StatDefOf.ArmorRating_Sharp),
+                ap.GetStatValue(StatDefOf.ArmorRating_Blunt), num1));
             // 耐久度影响
             if (ap.def.useHitPoints)
             {
@@ -186,8 +189,9 @@ namespace ApparelScoreViewer
                 float factor = HitPointsPercentScoreFactorCurve.Evaluate(x);
                 float oldNum1 = num1;
                 num1 *= factor;
-                logic.Add(
-                    $"耐久度影响: {ap.HitPoints}/{ap.MaxHitPoints} ({x:P0})，系数 {factor:F2}，分数 {oldNum1:F2} × {factor:F2} = {num1:F2}");
+                logic.Add(I18Constant.HitPointsEffect.Translate(ap.HitPoints, ap.MaxHitPoints, $"{x:P0}", $"{factor:F2}",
+                    $"{oldNum1:F2}", $"{factor:F2}",$"{num1:F2}"));
+                   
             }
 
             // 特殊加成
@@ -195,7 +199,7 @@ namespace ApparelScoreViewer
             float num2 = num1 + specialOffset;
             if (specialOffset != 0)
             {
-                logic.Add($"特殊装备加成 {specialOffset:F2}，分数 {num1:F2} + {specialOffset:F2} = {num2:F2}");
+                logic.Add(I18Constant.SpecialOffset.Translate($"{specialOffset:F2}", $"{num1:F2}", $"{specialOffset:F2}", $"{num2:F2}"));
             }
 
             // 保暖需求
@@ -204,7 +208,7 @@ namespace ApparelScoreViewer
             {
                 float statValue = ap.GetStatValue(StatDefOf.Insulation_Cold);
                 num3 *= InsulationColdScoreFactorCurve_NeedWarm.Evaluate(statValue);
-                logic.Add($"需要保暖，防寒值 {statValue}，保暖系数 {num3:F2}，应用保暖系数，分数 {num2:F2} × {num3:F2} = {num2 * num3:F2}");
+                logic.Add(I18Constant.NeededWarmth.Translate(statValue, $"{num3:F2}",$"{num2:F2}", $"{num3:F2}", $"{num2 * num3:F2}"));
             }
 
             float num4 = num2 * num3;
@@ -218,11 +222,11 @@ namespace ApparelScoreViewer
                 {
                     float tempNum4 = num4;
                     num4 *= 0.1f;
-                    logic.Add($"为死人衣物，分数 {oldNum4:F2} - 0.5 = {tempNum4:F2}，再 × 0.1 = {num4:F2}");
+                    logic.Add(I18Constant.WornByCorpse1.Translate( $"{oldNum4:F2}", 0.5,$"{tempNum4:F2}", 0.1,$"{num4:F2}"));
                 }
                 else
                 {
-                    logic.Add($"为死人衣物，分数 {oldNum4:F2} - 0.5 = {num4:F2}");
+                    logic.Add(I18Constant.WornByCorpse2.Translate( $"{oldNum4:F2}", 0.5, $"{num4:F2}"));
                 }
             }
 
@@ -233,7 +237,7 @@ namespace ApparelScoreViewer
                 {
                     float oldNum4 = num4;
                     num4 += 0.12f;
-                    logic.Add($"为人皮制品且意识形态喜欢，分数 {oldNum4:F2} + 0.12 = {num4:F2}");
+                    logic.Add(I18Constant.IdeoLikeHumanLeatherApparel.Translate($"{oldNum4:F2}", 0.12, $"{num4:F2}"));
                 }
                 else
                 {
@@ -245,12 +249,12 @@ namespace ApparelScoreViewer
                         {
                             float tempNum4 = num4;
                             num4 *= 0.1f;
-                            logic.Add(
-                                $"为人皮制品且厌恶，分数 {oldNum4:F2} - 0.5 = {tempNum4:F2}，再 × 0.1 = {num4:F2}");
+                           logic.Add(I18Constant.ThoughtHumanLeatherApparelSad1.Translate($"{oldNum4:F2}", 0.5, $"{tempNum4:F2}", 0.1, $"{num4:F2}"));
+                            
                         }
                         else
                         {
-                            logic.Add($"为人皮制品且厌恶，分数 {oldNum4:F2} - 0.5 = {num4:F2}");
+                            logic.Add(I18Constant.ThoughtHumanLeatherApparelSad2.Translate($"{oldNum4:F2}", 0.5, $"{num4:F2}"));
                         }
                     }
 
@@ -258,7 +262,9 @@ namespace ApparelScoreViewer
                     {
                         float oldNum4 = num4;
                         num4 += 0.12f;
-                        logic.Add($"为人皮制品且喜欢，分数 {oldNum4:F2} + 0.12 = {num4:F2}");
+                        logic.Add(I18Constant.ThoughtHumanLeatherApparelHappy.Translate($"{oldNum4:F2}", 0.12, $"{num4:F2}"));
+                        
+                        
                     }
                 }
             }
@@ -268,7 +274,7 @@ namespace ApparelScoreViewer
             {
                 float oldNum4 = num4;
                 num4 *= 0.01f;
-                logic.Add($"性别不符（{pawn.gender}），分数 {oldNum4:F2} × 0.01 = {num4:F2}");
+                logic.Add(I18Constant.GenderMismatch.Translate(pawn.gender, $"{oldNum4:F2}", 0.01, $"{num4:F2}"));
             }
 
             // 服装需求检查
@@ -307,13 +313,13 @@ namespace ApparelScoreViewer
                 {
                     float oldNum4 = num4;
                     num4 *= 25f;
-                    logic.Add($"为必需装备，分数 {oldNum4:F2} × 25 = {num4:F2}");
+                    logic.Add(I18Constant.RequiredForPawn.Translate($"{oldNum4:F2}", 25 , $"{num4:F2}"));
                 }
                 else if (flag3)
                 {
                     float oldNum4 = num4;
                     num4 *= 10f;
-                    logic.Add($"为允许装备，分数 {oldNum4:F2} × 10 = {num4:F2}");
+                    logic.Add(I18Constant.AllowedForPawn.Translate($"{oldNum4:F2}", 10 , $"{num4:F2}"));
                 }
             }
 
@@ -332,16 +338,17 @@ namespace ApparelScoreViewer
                 {
                     float oldNum4 = num4;
                     num4 *= 0.25f;
-                    logic.Add($"品质({qc})低于皇家要求({qualityCategory})，分数 {oldNum4:F2} × 0.25 = {num4:F2}");
+                    logic.Add(I18Constant.QualityBelowRoyalRequirement.Translate(qc.ToString().Translate(), qualityCategory.ToString().Translate()
+                        , $"{oldNum4:F2}", 0.25, $"{num4:F2}"));
                 }
                 else if (ap.TryGetQuality(out qc))
                 {
-                    logic.Add($"品质({qc})满足皇家要求({qualityCategory})");
+                    logic.Add(I18Constant.QualityMeetsRoyalRequirement.Translate(qc.ToString().Translate(), qualityCategory.ToString().Translate()));
                 }
             }
 
             resultScore = num4;
-            logic.Add($"最终评分：{resultScore:F2}");
+            logic.Add(I18Constant.ApparelScoreRaw.Translate($"{resultScore:F2}"));
             return new Tuple<float, List<string>>(resultScore, logic);
         }
 
@@ -355,7 +362,8 @@ namespace ApparelScoreViewer
                 pawn.equipment.Primary.def.IsWeaponUsingProjectiles)
             {
                 resultScore = -1000f;
-                logic.Add($"是护盾腰带且装备了远程武器 {pawn.equipment.Primary.LabelCap}，评分为 -1000");
+                logic.Add(I18Constant.ConflictWithRangedWeapon.Translate(pawn.equipment.Primary.LabelCap,-1000));
+                    
                 return new Tuple<float, List<string>>(resultScore, logic);
             }
 
@@ -363,14 +371,14 @@ namespace ApparelScoreViewer
             if (ap.def.apparel.ignoredByNonViolent && pawn.WorkTagIsDisabled(WorkTags.Violent))
             {
                 resultScore = -1000f;
-                logic.Add($"被非暴力工作者忽略，评分为 -1000");
+                logic.Add(I18Constant.IgnoredByNonViolent.Translate(-1000));
                 return new Tuple<float, List<string>>(resultScore, logic);
             }
 
             // 获取基础评分
             var apScore = ApparelScoreRaw(pawn, ap,neededWarmth);
             float num = apScore.Item1;
-            logic.Add($"基础评分: {num:F2}");
+            logic.Add(I18Constant.BasicScore.Translate($"{num:F2}"));
             List<Apparel> wornApparel = pawn.apparel.WornApparel;
             bool flag = false;
 
@@ -383,21 +391,21 @@ namespace ApparelScoreViewer
                     if (!pawn.outfits.forcedHandler.AllowedToAutomaticallyDrop(wornApparel[index]))
                     {
                         resultScore = -1000f;
-                        logic.Add($"与已装备的 {wornApparel[index].LabelCap} 冲突，且不允许自动脱下，评分为 -1000");
+                        logic.Add(I18Constant.ConflictWithExistingApparelAndCannotDrop.Translate(wornApparel[index].LabelCap,-1000));
                         return new Tuple<float, List<string>>(resultScore, logic);
                     }
 
                     if (pawn.apparel.IsLocked(wornApparel[index]))
                     {
                         resultScore = -1000f;
-                        logic.Add($"与已装备的 {wornApparel[index].LabelCap} 冲突，且该装备被锁定，评分为 -1000");
+                        logic.Add(I18Constant.ConflictWithLockedApparel.Translate(wornApparel[index].LabelCap,-1000));
                         return new Tuple<float, List<string>>(resultScore, logic);
                     }
 
                     float oldNum = num;
                     num -= wornScoresCache[index].Item1;
-                    logic.Add(
-                        $"与 {wornApparel[index].LabelCap}(评分:{wornScoresCache[index].Item1:F2}) 冲突，需要替换，分数 {oldNum:F2} - {wornScoresCache[index].Item1:F2} = {num:F2}");
+                    logic.Add(I18Constant.ConflictWithExistingApparelAndNeedReplace.Translate(wornApparel[index].LabelCap,$"{wornScoresCache[index].Item1:F2}",
+                        $"{oldNum:F2}",$"{wornScoresCache[index].Item1:F2}",$"{num:F2}"));
                     logic.AddRange(wornScoresCache[index].Item2.Select(logicStr => "\t" + logicStr));
                     flag = true;
                 }
@@ -408,12 +416,11 @@ namespace ApparelScoreViewer
             {
                 float oldNum = num;
                 num *= 10f;
-                logic.Add($"无需替换任何装备，获得加成，分数 {oldNum:F2} × 10 = {num:F2}");
+                logic.Add(I18Constant.NoReplacementBonus.Translate($"{oldNum:F2}", 10, $"{num:F2}"));
             }
 
             resultScore = num;
-            logic.Add($"最终收益评分：{resultScore:F2}");
-
+            logic.Add(I18Constant.FinalScore.Translate($"{resultScore:F2}"));
             return new Tuple<float, List<string>>(resultScore, logic);
         }
 
@@ -447,13 +454,8 @@ namespace ApparelScoreViewer
             }
 
             Log.Message("为 pawn: " + pawn.Name + " 找到衣服 " + tmpApparelList.Count + " 件");
-            //反射修改private字段
-            //在计算分数之前需要先判断当前Pawn的保暖需求
             NeededWarmth neededWarmth =
                 PawnApparelGenerator.CalculateNeededWarmth(pawn, pawn.Map.TileInfo.tile, GenLocalDate.Twelfth(pawn));
-            // Type type = typeof(JobGiver_OptimizeApparel);
-            // FieldInfo field = type.GetField("neededWarmth", BindingFlags.NonPublic | BindingFlags.Static);
-            // field.SetValue(null, neededWarmth);
             for (int j = 0; j < wornApparel.Count; j++)
             {
                 var apparelScoreRaw = ApparelScoreRaw(pawn, wornApparel[j], neededWarmth);
@@ -472,19 +474,22 @@ namespace ApparelScoreViewer
                 apparel2EvaluatingDetail.Add(apparel, new List<string>());
 
                 apparel2EvaluatingDetail[apparel].Add(
-                    $"当前衣服被允许: {GetColorMark(currentApparelPolicy.filter.Allows(apparel))}");
+                    I18Constant.ApparelIsAllowedByPolicy.Translate(GetColorMark(currentApparelPolicy.filter.Allows(apparel))));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
-                    $"在任意存储中: {GetColorMark(apparel.IsInAnyStorage())}");
+                    I18Constant.IsInAnyStorage.Translate(GetColorMark(apparel.IsInAnyStorage())));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
-                    $"没有被禁止: {GetColorMark(!apparel.IsForbidden(pawn))}");
+                    I18Constant.IsNotForbidden.Translate(GetColorMark(!apparel.IsForbidden(pawn))));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
-                    $"该衣服不是生物编码的: {GetColorMark(!apparel.IsBurning())}");
+                    I18Constant.IsNotIBurning.Translate(GetColorMark(!apparel.IsBurning())));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
-                    $"衣服没有性别要求或者性别符合: {GetColorMark((apparel.def.apparel.gender == Gender.None || apparel.def.apparel.gender == pawn.gender))}");
+                    I18Constant.NoGenderLimitOrGenderMatches.Translate(
+                        GetColorMark((apparel.def.apparel.gender == Gender.None ||
+                                      apparel.def.apparel.gender == pawn.gender))));
+                
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 if (currentApparelPolicy.filter.Allows(apparel) && apparel.IsInAnyStorage() &&
                     !apparel.IsForbidden(pawn) && !apparel.IsBurning() &&
@@ -494,16 +499,15 @@ namespace ApparelScoreViewer
                         wornApparelScores,neededWarmth);
                     float currentThingScore = apparelScoreGain.Item1;
                     apparel2ScoreDict[apparel] = currentThingScore;
-                    apparel2EvaluatingDetail[apparel].Add(
-                        $"衣服评分大于等于 0.05: {GetColorMark(currentThingScore >= 0.05f)}");
+                    apparel2EvaluatingDetail[apparel].Add(I18Constant.ApparelScoreInRange.Translate(0.05,GetColorMark(currentThingScore >= 0.05f)));
                     Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                     //输出具体的逻辑
                     apparel2EvaluatingDetail[apparel].AddRange(apparelScoreGain.Item2.Select(logicStr => "\t" + logicStr));
-                    apparel2EvaluatingDetail[apparel].Add(
-                        $"该衣服不是生物编码的，或者是被该小人授权的生物编码: {GetColorMark(!CompBiocodable.IsBiocoded(apparel) || CompBiocodable.IsBiocodedFor(apparel, pawn))}");
+                    apparel2EvaluatingDetail[apparel].Add(I18Constant.ApparelIsNotBiocodedOrAuthorized.Translate(
+                        GetColorMark(!CompBiocodable.IsBiocoded(apparel) || CompBiocodable.IsBiocodedFor(apparel, pawn))));
                     Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
-                    apparel2EvaluatingDetail[apparel].Add(
-                        $"小人拥有穿戴这件衣服所需的身体部位: {GetColorMark(ApparelUtility.HasPartsToWear(pawn, apparel.def))}");
+                    apparel2EvaluatingDetail[apparel].Add(I18Constant.HasPartsToWear.Translate(
+                        GetColorMark(ApparelUtility.HasPartsToWear(pawn, apparel.def))));
                     Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                     if (currentThingScore >= 0.05f &&
                         (!CompBiocodable.IsBiocoded(apparel) || CompBiocodable.IsBiocodedFor(apparel, pawn)) &&
@@ -515,8 +519,7 @@ namespace ApparelScoreViewer
                         {
                             if (apparelSource is Thing thing3)
                             {
-                                apparel2EvaluatingDetail[apparel].Add(
-                                    $"容器可用: {GetColorMark(apparelSource.ApparelSourceEnabled)}");
+                                apparel2EvaluatingDetail[apparel].Add(I18Constant.ApparelSourceEnabled.Translate(GetColorMark(apparelSource.ApparelSourceEnabled)));
                                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                                 if (!apparelSource.ApparelSourceEnabled)
                                 {

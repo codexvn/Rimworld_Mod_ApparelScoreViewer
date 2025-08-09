@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ApparelScoreViewer.CannotWear>无法穿戴该装备：{0}，评分：{1}</ApparelScoreViewer.CannotWear>
+    <ApparelScoreViewer.CannotWearReason1>- 殖民者无法穿戴此装备</ApparelScoreViewer.CannotWearReason1>
+    <ApparelScoreViewer.CannotWearReason2>- 装备遮挡视野</ApparelScoreViewer.CannotWearReason2>
+    <ApparelScoreViewer.CannotWearReason3>- 奴隶装备但穿戴者不是奴隶</ApparelScoreViewer.CannotWearReason3>
+    <ApparelScoreViewer.CannotWearReason4>- 机械师装备但穿戴者不是机械师</ApparelScoreViewer.CannotWearReason4>
+    <ApparelScoreViewer.BasicScoreWithDetails>基础分数：{0} + 装备分数偏移({1}) + 锐器护甲({2}) + 钝器护甲({3}) = {4}</ApparelScoreViewer.BasicScoreWithDetails>
+    <ApparelScoreViewer.BasicScore>基础分数：{0}</ApparelScoreViewer.BasicScore>
+    <ApparelScoreViewer.HitPointsEffect>耐久度影响: {0}/{1} ({2})，系数 {3}，分数 {4} × {5} = {6}</ApparelScoreViewer.HitPointsEffect>
+    <ApparelScoreViewer.SpecialOffset>特殊装备加成 {0}，分数 {1} + {2} = {3}</ApparelScoreViewer.SpecialOffset>
+    <ApparelScoreViewer.NeededWarmth>需要保暖，防寒值 {0}，保暖系数 {1}，应用保暖系数，分数 {2} × {3} = {4}</ApparelScoreViewer.NeededWarmth>
+    <ApparelScoreViewer.WornByCorpse1>为死人衣物，分数 {0} - {1} = {2}，再 × {3} = {4}</ApparelScoreViewer.WornByCorpse1>
+    <ApparelScoreViewer.WornByCorpse2>为死人衣物，分数 {0} - {1} = {2}</ApparelScoreViewer.WornByCorpse2>
+    <ApparelScoreViewer.IdeoLikeHumanLeatherApparel>为人皮制品且意识形态喜欢，分数 {0} + {1} = {2}</ApparelScoreViewer.IdeoLikeHumanLeatherApparel>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelSad1>为人皮制品且厌恶，分数 {0} - {1} = {2}，再 × {3} = {4}</ApparelScoreViewer.ThoughtHumanLeatherApparelSad1>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelSad2>为人皮制品且厌恶，分数 {0} - {1} = {2}</ApparelScoreViewer.ThoughtHumanLeatherApparelSad2>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelHappy>为人皮制品且喜欢，分数 {0} + {1} = {2}</ApparelScoreViewer.ThoughtHumanLeatherApparelHappy>
+    <ApparelScoreViewer.GenderMismatch>性别不符（{0}），分数 {1} × {2} = {3}</ApparelScoreViewer.GenderMismatch>
+    <ApparelScoreViewer.RequiredForPawn>为必需装备，分数 {0} × {1} = {2}</ApparelScoreViewer.RequiredForPawn>
+    <ApparelScoreViewer.AllowedForPawn>为允许装备，分数 {0} × {1} = {2}</ApparelScoreViewer.AllowedForPawn>
+    <ApparelScoreViewer.QualityBelowRoyalRequirement>品质({0})低于皇家要求({1})，分数 {2} × {3} = {4}</ApparelScoreViewer.QualityBelowRoyalRequirement>
+    <ApparelScoreViewer.QualityMeetsRoyalRequirement>品质({0}})满足皇家要求({1})</ApparelScoreViewer.QualityMeetsRoyalRequirement>
+    <ApparelScoreViewer.ApparelScoreRaw>最终评分：{0}</ApparelScoreViewer.ApparelScoreRaw>
+    <ApparelScoreViewer.ConflictWithRangedWeapon>是护盾腰带且装备了远程武器 {0}，评分为 {1}</ApparelScoreViewer.ConflictWithRangedWeapon>
+    <ApparelScoreViewer.IgnoredByNonViolent>被非暴力工作者忽略，评分为 {0}</ApparelScoreViewer.IgnoredByNonViolent>
+    <ApparelScoreViewer.ConflictWithExistingApparelAndCannotDrop>与已装备的 {0} 冲突，且不允许自动脱下，评分为 {1}</ApparelScoreViewer.ConflictWithExistingApparelAndCannotDrop>
+    <ApparelScoreViewer.ConflictWithLockedApparel>与已装备的 {0} 冲突，且该装备被锁定，评分为 {1}</ApparelScoreViewer.ConflictWithLockedApparel>
+    <ApparelScoreViewer.ConflictWithExistingApparelAndNeedReplace>与 {0}(评分:{1}) 冲突，需要替换，分数 {2} - {3} = {4}</ApparelScoreViewer.ConflictWithExistingApparelAndNeedReplace>
+    <ApparelScoreViewer.NoReplacementBonus>无需替换任何装备，获得加成，分数 {0} × {1} = {2}</ApparelScoreViewer.NoReplacementBonus>
+    <ApparelScoreViewer.FinalScore>最终收益评分：{0}</ApparelScoreViewer.FinalScore>
+    <ApparelScoreViewer.ApparelIsAllowedByPolicy>当前衣服被允许: {0}</ApparelScoreViewer.ApparelIsAllowedByPolicy>
+    <ApparelScoreViewer.IsInAnyStorage>在任意存储中: {0}</ApparelScoreViewer.IsInAnyStorage>
+    <ApparelScoreViewer.IsNotForbidden>没有被禁止: {0}</ApparelScoreViewer.IsNotForbidden>
+    <ApparelScoreViewer.IsNotIBurning>该衣服不是生物编码的: {0}</ApparelScoreViewer.IsNotIBurning>
+    <ApparelScoreViewer.NoGenderLimitOrGenderMatches>衣服没有性别要求或者性别符合: {0}</ApparelScoreViewer.NoGenderLimitOrGenderMatches>
+    <ApparelScoreViewer.ApparelScoreInRange>衣服评分大于等于 {0}: {1}</ApparelScoreViewer.ApparelScoreInRange>
+    <ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>该衣服不是生物编码的，或者是被该小人授权的生物编码: {0}</ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>
+    <ApparelScoreViewer.HasPartsToWear>小人拥有穿戴这件衣服所需的身体部位: {0}</ApparelScoreViewer.HasPartsToWear>
+    <ApparelScoreViewer.ApparelSourceEnabled>容器可用: {0}</ApparelScoreViewer.ApparelSourceEnabled>
+</LanguageData>
