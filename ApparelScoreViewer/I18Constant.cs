@@ -3,6 +3,7 @@
     public class I18Constant
     {
         //评分相关I18
+        public static string MenuTitle = "ApparelScoreViewer.MenuTitle";
         public static string WidgetsLabel = "ApparelScoreViewer.WidgetsLabel";
         public static string CannotWear = "ApparelScoreViewer.CannotWear";
         public static string CannotWearReason1 = "ApparelScoreViewer.CannotWearReason1";

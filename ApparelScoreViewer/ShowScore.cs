@@ -36,7 +36,7 @@ namespace ApparelScoreViewer
                     && selPawn.IsColonistPlayerControlled 
                     && selPawn.RaceProps.Humanlike)
                 {
-                    yield return new FloatMenuOption("查看衣服评分",
+                    yield return new FloatMenuOption(I18Constant.MenuTitle.Translate(),
                         () =>
                         {
                             Find.WindowStack.Add(

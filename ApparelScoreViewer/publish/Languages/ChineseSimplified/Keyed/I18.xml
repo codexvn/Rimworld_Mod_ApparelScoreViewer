@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+    <ApparelScoreViewer.MenuTitle>检查衣服评分</ApparelScoreViewer.MenuTitle>
     <ApparelScoreViewer.WidgetsLabel>{0} 的服装评分</ApparelScoreViewer.WidgetsLabel>
     <ApparelScoreViewer.CannotWear>无法穿戴该装备：{0}，评分：{1}</ApparelScoreViewer.CannotWear>
     <ApparelScoreViewer.CannotWearReason1>- 殖民者无法穿戴此装备</ApparelScoreViewer.CannotWearReason1>

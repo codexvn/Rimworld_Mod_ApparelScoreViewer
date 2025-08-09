@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+    <ApparelScoreViewer.MenuTitle>Check Clothes Score</ApparelScoreViewer.MenuTitle>
     <ApparelScoreViewer.WidgetsLabel>Apparel scores for {0}</ApparelScoreViewer.WidgetsLabel>
-    
     <ApparelScoreViewer.CannotWear>Cannot wear this apparel: {0}, score: {1}</ApparelScoreViewer.CannotWear>
     <ApparelScoreViewer.CannotWearReason1>- Colonist cannot wear this apparel</ApparelScoreViewer.CannotWearReason1>
     <ApparelScoreViewer.CannotWearReason2>- Apparel blocks vision</ApparelScoreViewer.CannotWearReason2>
