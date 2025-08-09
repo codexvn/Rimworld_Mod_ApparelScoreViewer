@@ -5,7 +5,7 @@
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <description>显示可以穿戴的衣服列表以及评分</description>
+    <description>显示可以穿戴的衣服列表以及评分,source: https://github.com/codexvn/Rimworld_Mod_ApparelScoreViewer</description>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
