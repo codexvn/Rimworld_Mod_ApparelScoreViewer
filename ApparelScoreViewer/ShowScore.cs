@@ -32,7 +32,9 @@ namespace ApparelScoreViewer
                 }
 
                 // 添加自定义选项
-                if (selPawn?.Faction == Faction.OfPlayer && selPawn.RaceProps.Humanlike)
+                if (selPawn != null 
+                    && selPawn.IsColonistPlayerControlled 
+                    && selPawn.RaceProps.Humanlike)
                 {
                     yield return new FloatMenuOption("查看衣服评分",
                         () =>
@@ -88,7 +90,7 @@ namespace ApparelScoreViewer
         public override void DoWindowContents(Rect inRect)
         {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0, 0, inRect.width, 30), $"Apparel Scores for {pawn.Name}");
+            Widgets.Label(new Rect(0, 0, inRect.width, 30), I18Constant.WidgetsLabel.Translate(pawn.Name));
             Text.Font = GameFont.Small;
             int line = 1;
             float lineHeight = 20f;
@@ -483,7 +485,7 @@ namespace ApparelScoreViewer
                     I18Constant.IsNotForbidden.Translate(GetColorMark(!apparel.IsForbidden(pawn))));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
-                    I18Constant.IsNotIBurning.Translate(GetColorMark(!apparel.IsBurning())));
+                    I18Constant.IsNotBurning.Translate(GetColorMark(!apparel.IsBurning())));
                 Log.Message(apparel2EvaluatingDetail[apparel].GetLast());
                 apparel2EvaluatingDetail[apparel].Add(
                     I18Constant.NoGenderLimitOrGenderMatches.Translate(

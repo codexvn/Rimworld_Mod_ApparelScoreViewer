@@ -3,7 +3,7 @@
     public class I18Constant
     {
         //评分相关I18
-
+        public static string WidgetsLabel = "ApparelScoreViewer.WidgetsLabel";
         public static string CannotWear = "ApparelScoreViewer.CannotWear";
         public static string CannotWearReason1 = "ApparelScoreViewer.CannotWearReason1";
         public static string CannotWearReason2 = "ApparelScoreViewer.CannotWearReason2";
@@ -36,7 +36,7 @@
         public static string ApparelIsAllowedByPolicy = "ApparelScoreViewer.ApparelIsAllowedByPolicy";
         public static string IsInAnyStorage = "ApparelScoreViewer.IsInAnyStorage";
         public static string IsNotForbidden = "ApparelScoreViewer.IsNotForbidden";
-        public static string IsNotIBurning = "ApparelScoreViewer.IsNotIBurning";
+        public static string IsNotBurning = "ApparelScoreViewer.IsNotBurning";
         public static string NoGenderLimitOrGenderMatches = "ApparelScoreViewer.NoGenderLimitOrGenderMatches";
         public static string ApparelScoreInRange = "ApparelScoreViewer.ApparelScoreInRange";
         public static string ApparelIsNotBiocodedOrAuthorized = "ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized";

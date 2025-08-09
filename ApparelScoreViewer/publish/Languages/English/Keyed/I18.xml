@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ApparelScoreViewer.WidgetsLabel>Apparel scores for {0}</ApparelScoreViewer.WidgetsLabel>
+    
+    <ApparelScoreViewer.CannotWear>Cannot wear this apparel: {0}, score: {1}</ApparelScoreViewer.CannotWear>
+    <ApparelScoreViewer.CannotWearReason1>- Colonist cannot wear this apparel</ApparelScoreViewer.CannotWearReason1>
+    <ApparelScoreViewer.CannotWearReason2>- Apparel blocks vision</ApparelScoreViewer.CannotWearReason2>
+    <ApparelScoreViewer.CannotWearReason3>- Slave apparel but wearer is not a slave</ApparelScoreViewer.CannotWearReason3>
+    <ApparelScoreViewer.CannotWearReason4>- Mechanitor apparel but wearer is not a mechanitor</ApparelScoreViewer.CannotWearReason4>
+    <ApparelScoreViewer.BasicScoreWithDetails>Base score: {0} + Apparel score offset ({1}) + Sharp armor ({2}) + Blunt armor ({3}) = {4}</ApparelScoreViewer.BasicScoreWithDetails>
+    <ApparelScoreViewer.BasicScore>Base score: {0}</ApparelScoreViewer.BasicScore>
+    <ApparelScoreViewer.HitPointsEffect>Durability effect: {0}/{1} ({2}), factor {3}, score {4} × {5} = {6}</ApparelScoreViewer.HitPointsEffect>
+    <ApparelScoreViewer.SpecialOffset>Special apparel bonus {0}, score {1} + {2} = {3}</ApparelScoreViewer.SpecialOffset>
+    <ApparelScoreViewer.NeededWarmth>Needs warmth, cold insulation {0}, warmth factor {1}, applying warmth factor, score {2} × {3} = {4}</ApparelScoreViewer.NeededWarmth>
+    <ApparelScoreViewer.WornByCorpse1>Corpse-worn apparel, score {0} - {1} = {2}, then × {3} = {4}</ApparelScoreViewer.WornByCorpse1>
+    <ApparelScoreViewer.WornByCorpse2>Corpse-worn apparel, score {0} - {1} = {2}</ApparelScoreViewer.WornByCorpse2>
+    <ApparelScoreViewer.IdeoLikeHumanLeatherApparel>Made of human leather and liked by ideology, score {0} + {1} = {2}</ApparelScoreViewer.IdeoLikeHumanLeatherApparel>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelSad1>Made of human leather and disliked, score {0} - {1} = {2}, then × {3} = {4}</ApparelScoreViewer.ThoughtHumanLeatherApparelSad1>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelSad2>Made of human leather and disliked, score {0} - {1} = {2}</ApparelScoreViewer.ThoughtHumanLeatherApparelSad2>
+    <ApparelScoreViewer.ThoughtHumanLeatherApparelHappy>Made of human leather and liked, score {0} + {1} = {2}</ApparelScoreViewer.ThoughtHumanLeatherApparelHappy>
+    <ApparelScoreViewer.GenderMismatch>Gender mismatch ({0}), score {1} × {2} = {3}</ApparelScoreViewer.GenderMismatch>
+    <ApparelScoreViewer.RequiredForPawn>Required apparel, score {0} × {1} = {2}</ApparelScoreViewer.RequiredForPawn>
+    <ApparelScoreViewer.AllowedForPawn>Allowed apparel, score {0} × {1} = {2}</ApparelScoreViewer.AllowedForPawn>
+    <ApparelScoreViewer.QualityBelowRoyalRequirement>Quality ({0}) below royal requirement ({1}), score {2} × {3} = {4}</ApparelScoreViewer.QualityBelowRoyalRequirement>
+    <ApparelScoreViewer.QualityMeetsRoyalRequirement>Quality ({0}) meets royal requirement ({1})</ApparelScoreViewer.QualityMeetsRoyalRequirement>
+    <ApparelScoreViewer.ApparelScoreRaw>Final score: {0}</ApparelScoreViewer.ApparelScoreRaw>
+    <ApparelScoreViewer.ConflictWithRangedWeapon>Is a shield belt and wearer has a ranged weapon {0}, score is {1}</ApparelScoreViewer.ConflictWithRangedWeapon>
+    <ApparelScoreViewer.IgnoredByNonViolent>Ignored by non-violent pawn, score is {0}</ApparelScoreViewer.IgnoredByNonViolent>
+    <ApparelScoreViewer.ConflictWithExistingApparelAndCannotDrop>Conflicts with equipped {0} and cannot be auto-dropped, score is {1}</ApparelScoreViewer.ConflictWithExistingApparelAndCannotDrop>
+    <ApparelScoreViewer.ConflictWithLockedApparel>Conflicts with equipped {0} and that apparel is locked, score is {1}</ApparelScoreViewer.ConflictWithLockedApparel>
+    <ApparelScoreViewer.ConflictWithExistingApparelAndNeedReplace>Conflicts with {0} (score: {1}), needs replacement, score {2} - {3} = {4}</ApparelScoreViewer.ConflictWithExistingApparelAndNeedReplace>
+    <ApparelScoreViewer.NoReplacementBonus>No replacement needed, bonus applied, score {0} × {1} = {2}</ApparelScoreViewer.NoReplacementBonus>
+    <ApparelScoreViewer.FinalScore>Final benefit score: {0}</ApparelScoreViewer.FinalScore>
+    <ApparelScoreViewer.ApparelIsAllowedByPolicy>Current apparel allowed: {0}</ApparelScoreViewer.ApparelIsAllowedByPolicy>
+    <ApparelScoreViewer.IsInAnyStorage>In any storage: {0}</ApparelScoreViewer.IsInAnyStorage>
+    <ApparelScoreViewer.IsNotForbidden>Not forbidden: {0}</ApparelScoreViewer.IsNotForbidden>
+    <ApparelScoreViewer.IsNotBurning>Not burning: {0}</ApparelScoreViewer.IsNotBurning>
+    <ApparelScoreViewer.NoGenderLimitOrGenderMatches>No gender restriction or gender matches: {0}</ApparelScoreViewer.NoGenderLimitOrGenderMatches>
+    <ApparelScoreViewer.ApparelScoreInRange>Apparel score is greater than or equal to {0}: {1}</ApparelScoreViewer.ApparelScoreInRange>
+    <ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>Not biocoded, or biocoded and authorized for this pawn: {0}</ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>
+    <ApparelScoreViewer.HasPartsToWear>Pawn has the required body parts to wear this apparel: {0}</ApparelScoreViewer.HasPartsToWear>
+    <ApparelScoreViewer.ApparelSourceEnabled>Apparel source enabled: {0}</ApparelScoreViewer.ApparelSourceEnabled>
+</LanguageData>

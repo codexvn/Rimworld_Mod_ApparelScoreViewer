@@ -69,9 +69,7 @@
     <ItemGroup>
       <Content Include="publish\About\About.xml" />
       <Content Include="publish\Languages\ChineseSimplified\Keyed\I18.xml" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="publish\Languages\English\Keyed\" />
+      <Content Include="publish\Languages\English\Keyed\I18.xml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
