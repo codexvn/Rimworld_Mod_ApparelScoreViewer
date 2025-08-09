@@ -5,6 +5,11 @@
         //评分相关I18
         public static string MenuTitle = "ApparelScoreViewer.MenuTitle";
         public static string WidgetsLabel = "ApparelScoreViewer.WidgetsLabel";
+        public static string WidgetsExtendAll = "ApparelScoreViewer.WidgetsExtendAll";
+        public static string WidgetsCollapseAll = "ApparelScoreViewer.WidgetsCollapseAll";
+        public static string WidgetsClearSearch = "ApparelScoreViewer.WidgetsClearSearch";
+        public static string WidgetsSearchHint = "ApparelScoreViewer.WidgetsSearchHint";
+        public static string WidgetsFinalScore = "ApparelScoreViewer.WidgetsFinalScore";
         public static string CannotWear = "ApparelScoreViewer.CannotWear";
         public static string CannotWearReason1 = "ApparelScoreViewer.CannotWearReason1";
         public static string CannotWearReason2 = "ApparelScoreViewer.CannotWearReason2";

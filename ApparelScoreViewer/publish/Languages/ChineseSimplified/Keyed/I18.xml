@@ -2,6 +2,11 @@
 <LanguageData>
     <ApparelScoreViewer.MenuTitle>检查衣服评分</ApparelScoreViewer.MenuTitle>
     <ApparelScoreViewer.WidgetsLabel>{0} 的服装评分</ApparelScoreViewer.WidgetsLabel>
+    <ApparelScoreViewer.WidgetsExtendAll>展开全部</ApparelScoreViewer.WidgetsExtendAll>
+    <ApparelScoreViewer.WidgetsCollapseAll>折叠全部</ApparelScoreViewer.WidgetsCollapseAll>
+    <ApparelScoreViewer.WidgetsClearSearch>清空搜索</ApparelScoreViewer.WidgetsClearSearch>
+    <ApparelScoreViewer.WidgetsSearchHint>搜索装备名称或评分详情...</ApparelScoreViewer.WidgetsSearchHint>
+    <ApparelScoreViewer.WidgetsFinalScore>总分: {0}</ApparelScoreViewer.WidgetsFinalScore>
     <ApparelScoreViewer.CannotWear>无法穿戴该装备：{0}，评分：{1}</ApparelScoreViewer.CannotWear>
     <ApparelScoreViewer.CannotWearReason1>- 殖民者无法穿戴此装备</ApparelScoreViewer.CannotWearReason1>
     <ApparelScoreViewer.CannotWearReason2>- 装备遮挡视野</ApparelScoreViewer.CannotWearReason2>
@@ -34,7 +39,7 @@
     <ApparelScoreViewer.ApparelIsAllowedByPolicy>当前衣服被允许: {0}</ApparelScoreViewer.ApparelIsAllowedByPolicy>
     <ApparelScoreViewer.IsInAnyStorage>在任意存储中: {0}</ApparelScoreViewer.IsInAnyStorage>
     <ApparelScoreViewer.IsNotForbidden>没有被禁止: {0}</ApparelScoreViewer.IsNotForbidden>
-    <ApparelScoreViewer.IsNotIBurning>该衣服没有着火: {0}</ApparelScoreViewer.IsNotIBurning>
+    <ApparelScoreViewer.IsNotBurning>该衣服没有着火: {0}</ApparelScoreViewer.IsNotBurning>
     <ApparelScoreViewer.NoGenderLimitOrGenderMatches>衣服没有性别要求或者性别符合: {0}</ApparelScoreViewer.NoGenderLimitOrGenderMatches>
     <ApparelScoreViewer.ApparelScoreInRange>衣服评分大于等于 {0}: {1}</ApparelScoreViewer.ApparelScoreInRange>
     <ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>该衣服不是生物编码的，或者是被该小人授权的生物编码: {0}</ApparelScoreViewer.ApparelIsNotBiocodedOrAuthorized>

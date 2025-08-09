@@ -2,6 +2,11 @@
 <LanguageData>
     <ApparelScoreViewer.MenuTitle>Check Clothes Score</ApparelScoreViewer.MenuTitle>
     <ApparelScoreViewer.WidgetsLabel>Apparel scores for {0}</ApparelScoreViewer.WidgetsLabel>
+    <ApparelScoreViewer.WidgetsExtendAll>Expand All</ApparelScoreViewer.WidgetsExtendAll>
+    <ApparelScoreViewer.WidgetsCollapseAll>Collapse All</ApparelScoreViewer.WidgetsCollapseAll>
+    <ApparelScoreViewer.WidgetsClearSearch>Clear Search</ApparelScoreViewer.WidgetsClearSearch>
+    <ApparelScoreViewer.WidgetsSearchHint>Search apparel names or score details...</ApparelScoreViewer.WidgetsSearchHint>
+    <ApparelScoreViewer.WidgetsFinalScore>Total Score: {0}</ApparelScoreViewer.WidgetsFinalScore>
     <ApparelScoreViewer.CannotWear>Cannot wear this apparel: {0}, score: {1}</ApparelScoreViewer.CannotWear>
     <ApparelScoreViewer.CannotWearReason1>- Colonist cannot wear this apparel</ApparelScoreViewer.CannotWearReason1>
     <ApparelScoreViewer.CannotWearReason2>- Apparel blocks vision</ApparelScoreViewer.CannotWearReason2>
